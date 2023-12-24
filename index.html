@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Nous vous aiderons à trouver une réponse à vos questions, concernant nos cartes cadeaux Prizy, ou vous mettrons en contact avec le service clientèle par chat en direct ou par courrier électronique."
+    />
+    <meta
+      name="keywords"
+      content="Helpdesk, Gift Card, Carte cadeau, Prizy, Goubba, Bon d'achat"
+    />
+
+    <link rel="apple-touch-icon" href="./logo192.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./indexstyle.css" />
+    <title data-key="title">Cartes cadeaux Prizy - Centre d'aide</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!--Import the texts-->
+    <script src="./lang.js"></script>
+
+    <script>
+      function updateUserLang(lang) {
+        $("html").attr("lang", lang);
+        if (lang == "ar") {
+          $("html").attr("dir", "rtl");
+        } else {
+          $("html").attr("dir", "ltr");
+        }
+
+        var selectedLangContent = langdata[lang];
+        $.each(selectedLangContent, function (index, value) {
+          $("[data-key=" + index + "]").html(value);
+        });
+
+        // store active style
+        localStorage.setItem("saved_lang", lang);
+      }
+    </script>
+
+    <!--Main script-->
+    <script>
+      var saved_lang = localStorage && localStorage.getItem("saved_lang");
+
+      $(document).ready(function () {
+        if (saved_lang) {
+          $("select").val(saved_lang);
+          updateUserLang(saved_lang);
+        }
+
+        //click on a title from the sub menu
+        $(".submenu").on("click", "a", function () {
+          $(".submenu .submenuElement a.active").removeClass("active");
+          $(this).addClass("active");
+        });
+
+        //change the selected title by scrolling
+        var sections = $(".section"),
+          nav = $("nav"),
+          nav_height = nav.outerHeight();
+
+        $(window).on("scroll", function () {
+          var cur_pos = $(this).scrollTop();
+          sections.each(function () {
+            var top = $(this).offset().top - nav_height,
+              bottom = top + $(this).outerHeight();
+
+            if (cur_pos >= top && cur_pos <= bottom) {
+              $(".submenu .submenuElement a.active").removeClass("active");
+              $("#to" + $(this).attr("id")).addClass("active");
+            }
+          });
+        });
+
+        //change the selected lang via the select
+        $("select").on("change", function (e) {
+          var optionSelected = $("option:selected", this);
+          var valueSelected = this.value;
+
+          updateUserLang(valueSelected);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="root">
+      <!--Nav bar section-->
+      <nav dir="ltr">
+        <div class="navbarContainer">
+          <div
+            style="
+              display: flex;
+              align-items: flex-end;
+              justify-content: flex-start;
+            "
+          >
+            <a class="navLinks">
+              <img class="navLogo" src="./assets/logo.png" alt="Logo" />
+            </a>
+
+            <svg
+              color="rgb(0, 0, 0)"
+              fill="currentColor"
+              height="22"
+              viewBox="0 0 22 22"
+              width="22"
+              xmlns="http://www.w3.org/2000/svg"
+              class="css-1c4annv"
+            >
+              <path d="M7.5 16H10l5-5-5-5H7.5l5 5-5 5z"></path>
+            </svg>
+
+            <p
+              data-key="help-center"
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 22px;
+                color: #000;
+                padding: 0;
+              "
+            >
+              Centre d'aide
+            </p>
+          </div>
+          <select class="minimal" name="lang" id="lang-select">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="ar">عربية</option>
+          </select>
+        </div>
+      </nav>
+      <!--End of Nav bar section-->
+
+      <!--Help-->
+      <div class="bodyContainer">
+        <div class="submenuContainer">
+          <p data-key="in-this-guide" style="font-weight: 500">DANS CE GUIDE</p>
+          <div class="divider"></div>
+          <ul class="submenu">
+            <li class="submenuElement">
+              <a data-key="t1" id="tot1" class="active" href="#t1"
+                >Authentification et informations personelles</a
+              >
+              <ul class="submenuElementList">
+                <li>
+                  <a data-key="t1q1" id="tot1q1" href="#t1q1"
+                    >Première connexion : comment créer un compte sur Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t1q2" id="tot1q2" href="#t1q2"
+                    >Je ne reçois pas de code sur mon numéro de téléphone</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t1q3" id="tot1q3" href="#t1q3"
+                    >Je n’arrive pas à créer un compte avec mon numéro de
+                    téléphone</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t1q4" id="tot1q4" href="#t1q4"
+                    >Comment me connecter à mon compte Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t1q5" id="tot1q5" href="#t1q5"
+                    >Je n'arrive pas à accéder à mon compte ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t1q6" id="tot1q6" href="#t1q6"
+                    >Retrouver ou modifier mes informations d'accès au compte</a
+                  >
+                </li>
+
+                <li>
+                  <a data-key="t1q7" id="tot1q7" href="#t1q7"
+                    >Comment modifier les informations personnelles de mon
+                    compte utilisateur ?</a
+                  >
+                </li>
+
+                <li>
+                  <a data-key="t1q8" id="tot1q8" href="#t1q8"
+                    >J’ai été déconnecté de mon compte “session expirée”</a
+                  >
+                </li>
+
+                <li>
+                  <a data-key="t1q9" id="tot1q9" href="#t1q9"
+                    >Comment me déconnecter de l'application ?</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="submenuElement">
+              <a data-key="t2" id="tot2" href="#t2"
+                >Informations générales sur les cartes cadeaux Prizy</a
+              >
+              <ul class="submenuElementList">
+                <li>
+                  <a data-key="t2q1" id="tot2q1" href="#t2q1"
+                    >1. Comment charger mes cartes cadeaux sur mon compte Prizy
+                    ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q2" id="tot2q2" href="#t2q2"
+                    >2. Comment configurer une nouvelle adresse email sur mon
+                    compte Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q3" id="tot2q3" href="#t2q3"
+                    >3. Je n’ai pas reçu d’email de validation pour vérifier mon
+                    adresse email</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q4" id="tot2q4" href="#t2q4"
+                    >4. Comment puis-je fusionner plusieurs adresses emails dans
+                    un compte Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q5" id="tot2q5" href="#t2q5"
+                    >5. Comment supprimer une adresse email configurée sur mon
+                    compte Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q6" id="tot2q6" href="#t2q6"
+                    >6. Comment activer le mode nuit sur l’application Prizy
+                    ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t2q7" id="tot2q7" href="#t2q7"
+                    >7. Comment changer la langue de l’application ?</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="submenuElement">
+              <a data-key="t3" id="tot3" href="#t3"
+                >Gestion des cartes cadeaux Prizy</a
+              >
+              <ul class="submenuElementList">
+                <li>
+                  <a data-key="t3q1" id="tot3q1" href="#t3q1"
+                    >1. À propos de nos cartes cadeaux Prizy</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q2" id="tot3q2" href="#t3q2"
+                    >2. Canaux de réception d’une carte cadeau Prizy</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q3" id="tot3q3" href="#t3q3"
+                    >3. Connaître le montant total et le solde de ma carte
+                    cadeau</a
+                  >
+                </li>
+
+                <li>
+                  <a data-key="t3q4" id="tot3q4" href="#t3q4"
+                    >4. Connaître le type de ma carte cadeau Prizy</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q5" id="tot3q5" href="#t3q5"
+                    >5. Connaître la date de validité de ma carte cadeau
+                    Prizy</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q6" id="tot3q6" href="#t3q6"
+                    >6. Informations de paiement de ma carte cadeau Prizy</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q7" id="tot3q7" href="#t3q7"
+                    >7. Où consommer ma carte cadeau Prizy ?</a
+                  >
+                </li>
+
+                <li>
+                  <a data-key="t3q8" id="tot3q8" href="#t3q8"
+                    >8. Comment accéder aux magasins les plus proches de moi
+                    ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q9" id="tot3q9" href="#t3q9"
+                    >9. Comment effectuer un paiement avec la carte cadeau Prizy
+                    ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q10" id="tot3q10" href="#t3q10"
+                    >10. Est-il possible d'utiliser les cartes-cadeaux Prizy en
+                    ligne ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q11" id="tot3q11" href="#t3q11"
+                    >11. Comment utiliser ma carte cadeau Prizy en ligne ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q12" id="tot3q12" href="#t3q12">
+                    12. Comment faire le suivi de mes “achats faits” avec ma
+                    carte cadeau Prizy ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q13" id="tot3q13" href="#t3q13"
+                    >13. Comment faire un suivi global de mes achats ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q14" id="tot3q14" href="#t3q14">
+                    14. Est-il possible d’utiliser mes cartes cadeaux Prizy
+                    pendant les offres/promotions ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q15" id="tot3q15" href="#t3q15"
+                    >15. Que se passe-t-il si on me refuse ma carte cadeau Prizy
+                    ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q16" id="tot3q16" href="#t3q16"
+                    >16. Que dois-je faire si je m'aperçois que ma carte cadeau
+                    a été utilisée frauduleusement ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q17" id="tot3q17" href="#t3q17">
+                    17. Est-ce que je peux utiliser ma carte cadeau après le
+                    délai de validité ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q18" id="tot3q18" href="#t3q18"
+                    >18. Que dois-je faire en cas de retour ou d'échange produit
+                    dans une des enseignes partenaires ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q19" id="tot3q19" href="#t3q19"
+                    >19. Puis-je annuler une commande après avoir fait mon
+                    paiement en ligne ?</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q20" id="tot3q20" href="#t3q20"
+                    >20. J’ai fait un achat en ligne mais je ne reçois pas
+                    d’appel pour confirmer ma commande</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q21" id="tot3q21" href="#t3q21"
+                    >21. J'ai renvoyé mes articles à l'enseigne mais je ne
+                    trouve pas mon remboursement</a
+                  >
+                </li>
+                <li>
+                  <a data-key="t3q22" id="tot3q22" href="#t3q22">
+                    22. Votre question ne figure pas dans la liste et vous
+                    voulez reporter un problème ?</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="helpBodyContainer">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 5px;
+            "
+          >
+            <p
+              data-key="help-center"
+              style="
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 22px;
+                color: #6e6e6e;
+                padding: 0;
+              "
+            >
+              Centre d’aide de Prizy
+            </p>
+            <svg
+              color="rgb(204, 204, 204)"
+              fill="currentColor"
+              height="22"
+              viewBox="0 0 22 22"
+              width="22"
+              xmlns="http://www.w3.org/2000/svg"
+              class="css-1c4annv"
+            >
+              <path d="M7.5 16H10l5-5-5-5H7.5l5 5-5 5z"></path>
+            </svg>
+
+            <p
+              data-key="prizy-gift-cards"
+              style="
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 22px;
+                color: #000;
+                padding: 0;
+              "
+            >
+              Cartes cadeaux Prizy
+            </p>
+          </div>
+          <h1 data-key="guidelines">Cartes cadeaux Prizy : Mode d’emploi</h1>
+          <p
+            data-key="p1"
+            style="
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 30px;
+              color: #6e6e6e;
+            "
+          >
+            Prévisualisez la façon de recevoir et d'utiliser nos cartes cadeaux
+            Prizy pour faire des achats dans notre réseau de boutiques
+            partenaires.
+          </p>
+          <p
+            data-key="p2"
+            style="
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 26px;
+              color: #6e6e6e;
+            "
+          >
+            Dernière mise à jour le 23 Décembre 2023
+          </p>
+
+          <div
+            class="divider"
+            style="margin-top: 50px; margin-bottom: 50px"
+          ></div>
+
+          <h2 data-key="t1" id="t1" class="section">
+            Authentification et informations personelles
+          </h2>
+
+          <h3 data-key="t1q1" class="section" id="t1q1">
+            1. Première connexion : comment créer un compte sur Prizy ?
+          </h3>
+          <ol>
+            <li data-key="t1q1p1">
+              Rendez-vous à l'écran de connexion et cliquez sur 's'inscrire'.
+            </li>
+            <li data-key="t1q1p2">
+              Saisissez le numéro de téléphone que vous aimeriez lier à votre
+              compte et cliquez sur 'Commencer'.
+            </li>
+            <li data-key="t1q1p3">
+              Vous serez redirigés vers l'écran permettant de saisir le code
+              reçu sur le numéro saisi préalablement.
+            </li>
+            <li data-key="t1q1p4">
+              Une fois votre numéro validé, saisissez le reste des informations
+              nécessaires pour la création de votre compte (nom, prénom, email
+              et mot de passe).
+            </li>
+          </ol>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure1.png"
+              alt="Première connexion : comment créer un compte sur Prizy ?"
+            />
+            <figcaption data-key="p7">
+              Figure 1 : Première connexion : comment créer un compte sur Prizy
+              ?
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t1q2" class="section" id="t1q2">
+            2. Je ne reçois pas de code sur mon numéro de téléphone
+          </h3>
+          <ol>
+            <li data-key="t1q2p1">
+              Veuillez vérifier que le numéro de téléphone saisi est bien
+              correct.
+            </li>
+            <li data-key="t1q2p2">
+              Cliquez sur 'Renvoyer' dans l'écran de saisie du code.
+            </li>
+            <li data-key="t1q2p3">
+              Si vous ne recevez toujours pas de code sur votre numéro, veuillez
+              nous contacter via le numéro suivant : +213 550576644.
+            </li>
+          </ol>
+
+          <h3 data-key="t1q3" class="section" id="t1q3">
+            3. Je n’arrive pas à créer un compte avec mon numéro de téléphone
+          </h3>
+          <p data-key="t1q3p1">
+            Si vous avez déjà un compte sur Prizy App avec ce numéro de
+            téléphone, veuillez cliquer sur Se connecter au lieu de S'inscrire.
+          </p>
+          <p data-key="t1q3p2">
+            Si, en revanche, vous ne possédez pas encore de compte Prizy,
+            veuillez nous contacter au +213 55057664. Notre équipe vérifiera
+            votre numéro de téléphone et vous accompagnera dans la création de
+            votre compte.
+          </p>
+
+          <h3 data-key="t1q4" class="section" id="t1q4">
+            "4. Comment me connecter à mon compte Prizy ?"
+          </h3>
+          <p data-key="t1q4p1">
+            Pour vous connecter à votre compte Prizy, accédez à l'écran de
+            connexion et utilisez le numéro de téléphone ainsi que le mot de
+            passe que vous avez définis lors de la création de votre compte.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure2.png"
+              alt="Comment me connecter à mon compte Prizy ?"
+            />
+            <figcaption data-key="p7">
+              Figure 2 : Comment me connecter à mon compte Prizy ?
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t1q5" class="section" id="t1q5">
+            5. Je n'arrive pas à accéder à mon compte ?
+          </h3>
+
+          <p data-key="t1q5p1">
+            Veuillez vérifier que vos identifiants de connexion (numéro de
+            téléphone et mot de passe) sont corrects.",
+          </p>
+          <p data-key="t1q5p2">
+            Si le problème persiste, veuillez nous contacter au +213 550576644.
+          </p>
+
+          <h3 data-key="t1q6" class="section" id="t1q6">
+            6. Retrouver ou modifier mes informations d'accès au compte
+          </h3>
+          <p data-key="t1q6p1">
+            Si l’un des trois cas ci-dessous se présente :
+          </p>
+          <ul class="points">
+            <li data-key="t1q6p2">
+              Vous avez perdu votre identifiant ou votre mot de passe.
+            </li>
+            <li data-key="t1q6p3">
+              Vous ne retrouvez pas les informations de votre compte.
+            </li>
+            <li data-key="t1q6p4">Vous avez changé de numéro de téléphone.</li>
+          </ul>
+          <p data-key="t1q6p5">
+            Veuillez nous contacter au +213 550576644. Nous vous assisterons
+            pour configurer votre compte Prizy
+          </p>
+
+          <h3 data-key="t1q7" class="section" id="t1q7">
+            7. Comment modifier les informations personnelles de mon compte
+            utilisateur ?
+          </h3>
+
+          <p data-key="t1q7p1">
+            En tant que titulaire du compte, vous avez la possibilité de
+            modifier les informations suivantes : nom, prénom, date de
+            naissance, genre et mot de passe. Voici comment procéder :
+          </p>
+          <ol>
+            <li data-key="t1q7p2">
+              Rendez-vous dans le menu de l'application et cliquez sur votre
+              photo de profil pour accéder aux paramètres de votre compte.
+            </li>
+            <li data-key="t1q7p3">
+              Cliquez sur informations du profil / informations personnelles
+              pour modifier votre nom, prénom, date de naissance et genre.
+            </li>
+            <li data-key="t1q7p3">
+              Cliquez sur informations du profil/ modifier mon mot de passe pour
+              configurer un nouveau mot de passe.
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure8.png"
+              alt="Comment modifier les informations personnelles de mon compte utilisateur ?"
+            />
+            <figcaption data-key="p7">
+              Figure 3 : Comment modifier les informations personnelles de mon
+              compte utilisateur ?
+            </figcaption>
+          </figure>
+
+          <p data-key="t1q7p5">
+            Cependant, veuillez noter que vous n'avez pas la possibilité de
+            modifier votre numéro de téléphone via l'application pour le moment.
+            Pour effectuer cette modification, veuillez contacter l'équipe
+            technique de Prizy au numéro suivant : +213 550576644.
+          </p>
+
+          <h3 data-key="t1q8" class="section" id="t1q8">
+            8. J’ai été déconnecté de mon compte “session expirée”
+          </h3>
+          <p data-key="t1q8p1">
+            Si, lors de votre tentative d'action, vous recevez le message
+            “session expirée” qui vous redirige vers l'écran de connexion, cela
+            indique que votre compte a été ouvert sur un autre appareil. Dans ce
+            cas, vous devez vous reconnecter en utilisant vos identifiants
+            (numéro de téléphone et mot de passe).
+          </p>
+          <p data-key="t1q8p2">
+            Si vous n'êtes pas à l'origine de cette action, veuillez contacter
+            immédiatement l'équipe Prizy au numéro suivant : +213 550576644.
+          </p>
+
+          <h3 data-key="t1q9" class="section" id="t1q9">
+            9. Comment me déconnecter de l'application ?
+          </h3>
+          <p data-key="t1q9p1">
+            Pour vous déconnecter, allez dans le menu de l'application en haut à
+            gauche de la barre d'application. Cliquez sur “Déconnexion” et
+            confirmez votre choix. Vous serez redirigé vers l'écran de
+            connexion.
+          </p>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure16.png"
+              alt="Comment me déconnecter de l'application ?"
+            />
+            <figcaption data-key="p7">
+              Figure 4 : Comment me déconnecter de l'application ?
+            </figcaption>
+          </figure>
+
+          <div
+            class="divider"
+            style="margin-top: 50px; margin-bottom: 50px"
+          ></div>
+
+          <h2 data-key="t2" id="t2" class="section">
+            Gestion d'un profil Prizy
+          </h2>
+
+          <h3 data-key="t2q1" class="section" id="t2q1">
+            1. Comment charger mes cartes cadeaux sur mon compte Prizy ?
+          </h3>
+          <p data-key="t2q1p1">
+            Pour importer vos cartes cadeaux sur l’application, vous devez
+            configurer les adresses électroniques relatives à celles-ci. Pour ce
+            faire, suivez les étapes de configuration d’une adresse email.
+          </p>
+
+          <h3 data-key="t2q2" class="section" id="t2q2">
+            2. Comment configurer une nouvelle adresse email sur mon compte
+            Prizy ?
+          </h3>
+          <ol>
+            <li data-key="t2q2p1">
+              Rendez-vous dans le menu de l’application et cliquez sur votre
+              photo de profil pour accéder aux paramètres de votre compte.
+            </li>
+            <li data-key="t2q2p2">
+              Accédez à la section informations du profil.
+            </li>
+            <li data-key="t2q2p3">
+              En bas de la liste, saisissez votre adresse email et cliquez sur
+              valider.
+            </li>
+            <li data-key="t2q2p4">
+              Vous verrez votre adresse email s'afficher dans la liste des
+              adresses emails avec un état de validation en cours. Pour valider
+              celle-ci, un email de validation vous sera envoyé sur votre boîte.
+            </li>
+            <li data-key="t2q2p5">
+              Une fois votre adresse email validée, les cartes cadeaux relatives
+              à celle-ci seront importées sur votre compte.
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure3.png"
+              alt="Comment configurer une nouvelle adresse email sur mon compte Prizy ?"
+            />
+            <figcaption data-key="p7">
+              Figure 5 : Comment configurer une nouvelle adresse email sur mon
+              compte Prizy ?
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t2q3" class="section" id="t2q3">
+            3. Je n’ai pas reçu d’email de validation pour vérifier mon adresse
+            email
+          </h3>
+          <p data-key="t2q3p1">
+            Veuillez vérifier votre boîte de réception, y compris l'onglet des
+            courriers indésirables. Si vous ne recevez toujours pas d'e-mail
+            dans quelques minutes, vous pouvez en demander un nouveau de la
+            manière suivante :
+          </p>
+          <ol>
+            <li data-key="t2q3p2">
+              Rendez-vous dans le menu de l'application et cliquez sur votre
+              photo de profil pour accéder aux paramètres de votre compte.
+            </li>
+            <li data-key="t2q3p3">
+              Accédez à la section informations du profil.
+            </li>
+            <li data-key="t2q3p4">
+              Sélectionnez votre adresse email dans la liste des adresses déjà
+              configurées, puis cliquez sur les trois points à droite.
+            </li>
+            <li data-key="t2q3p5">
+              Vous verrez apparaître un sous-menu, cliquez sur Renvoyer un email
+              de vérification.
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure4.png"
+              alt="Renvoyer un email de vérification"
+            />
+            <figcaption data-key="p7">
+              Figure 6 : Renvoyer un email de vérification
+            </figcaption>
+          </figure>
+
+          <p data-key="t2q3p6">
+            Si le problème persiste, veuillez nous contacter via le numéro
+            suivant : +213 550576644.
+          </p>
+
+          <h3 data-key="t2q4" class="section" id="t2q4">
+            4. Comment puis-je fusionner plusieurs adresses emails dans un
+            compte Prizy ?
+          </h3>
+          <p data-key="t2q4p1">
+            Avec Prizy, vous avez la possibilité de configurer plusieurs
+            adresses emails avec un seul compte, pour ce faire, suivez les mêmes
+            étapes de configuration d’une adresse email (Q2).
+          </p>
+
+          <h3 data-key="t2q5" class="section" id="t2q5">
+            5. Comment supprimer une adresse email configurée sur mon compte
+            Prizy ?
+          </h3>
+
+          <p data-key="t2q5p1">
+            Tant que vous n’avez pas validé une adresse email, vous avez
+            toujours la possibilité de la supprimer comme suit :
+          </p>
+          <ol>
+            <li data-key="t2q5p2">
+              Cliquez sur votre photo de profil pour accéder à votre compte.
+            </li>
+            <li data-key="t2q5p3">
+              Accédez à la section informations du profil.
+            </li>
+            <li data-key="t2q5p4">
+              Sélectionnez votre adresse email de la liste des adresses emails
+              déjà configurées et cliquez sur les trois points à droite.
+            </li>
+            <li data-key="t2q5p5">
+              Vous verrez apparaître un sous menu, cliquez sur Supprimer
+              l’adresse email.
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure5.png"
+              alt="Supprimer une adresse email"
+            />
+            <figcaption data-key="p7">
+              Figure 7 : Supprimer une adresse email
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t2q6" class="section" id="t2q6">
+            6. Comment activer le mode nuit sur l’application Prizy ?
+          </h3>
+          <ol>
+            <li data-key="t2q6p1">
+              Rendez-vous dans le menu de l’application et cliquez sur votre
+              photo de profil pour accéder aux paramètres de votre compte.
+            </li>
+            <li data-key="t2q6p2">
+              Cliquez sur l'icône de lune en haut à droite de la barre de
+              l’application.
+            </li>
+          </ol>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure6.png"
+              alt="Activer le mode nuit"
+            />
+            <figcaption data-key="p7">
+              Figure 8 : Activer le mode nuit
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t2q7" class="section" id="t2q7">
+            7. Comment changer la langue de l’application ?
+          </h3>
+          <ol>
+            <li data-key="t2q7p1">
+              Rendez-vous dans le menu de l’application et cliquez sur votre
+              photo de profil pour accéder aux paramètres de votre compte.
+            </li>
+            <li data-key="t2q7p2">
+              Cliquez sur le bouton Langues et sélectionnez la langue de votre
+              choix.
+            </li>
+          </ol>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure7.png"
+              alt="changer la langue de l’application"
+            />
+            <figcaption data-key="p7">
+              Figure 9 : Changer la langue de l’application
+            </figcaption>
+          </figure>
+
+          <!---->
+
+          <div
+            class="divider"
+            style="margin-top: 50px; margin-bottom: 50px"
+          ></div>
+          <h2 data-key="t3" id="t3" class="section">
+            Gestion des cartes cadeaux Prizy
+          </h2>
+
+          <h3 data-key="t3q1" class="section" id="t3q1">
+            1. À propos de nos cartes cadeaux Prizy
+          </h3>
+          <p data-key="t3q1p1">
+            Les cartes cadeaux Prizy offrent à leurs bénéficiaires la
+            possibilité de les utiliser dans un vaste réseau de partenaires,
+            couvrant diverses catégories telles que le prêt-à-porter, les
+            accessoires, l'électroménager, l'électronique, le sport, le
+            bien-être, et l'agroalimentaire… De plus, elles peuvent être
+            utilisées sur les sites web partenaires répertoriés dans notre
+            catalogue.
+          </p>
+          <p data-key="t3q1p2">
+            Vous avez la flexibilité d'utiliser votre carte cadeau en plusieurs
+            fois, dans différentes enseignes, tant que le montant de la dotation
+            et la date de validité ne sont pas dépassés.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure21.png"
+              alt="À propos de nos cartes cadeaux Prizy"
+            />
+            <figcaption data-key="p7">
+              Figure 10 : À propos de nos cartes cadeaux Prizy
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q2" class="section" id="t3q2">
+            2. Canaux de réception d’une carte cadeau Prizy
+          </h3>
+          <p data-key="t3q2p1">
+            Les cartes-cadeaux numériques de Prizy ont été spécialement conçues
+            pour être associées à l'adresse électronique du bénéficiaire. Dans
+            la plupart des cas, vous recevrez votre carte cadeau par e-mail,
+            envoyée par l'entreprise ou la personne qui souhaite vous l'offrir.
+            Toutefois, une fois que vous l'avez reçue par courrier électronique,
+            vous avez également la possibilité de l'imprimer si vous le
+            souhaitez, ou de l'importer dans l'application Prizy.
+          </p>
+          <p data-key="t3q2p2">
+            Une fois que vos cartes-cadeaux sont importées dans l'application,
+            vous pouvez y accéder en sélectionnant l'onglet “Mes cartes-cadeaux”
+            dans le menu de l'application.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure20.png"
+              alt="Canaux de réception d’une carte cadeau Prizy"
+            />
+            <figcaption data-key="p7">
+              Figure 11 : Canaux de réception d’une carte cadeau Prizy
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q3" class="section" id="t3q3">
+            3. Connaître le montant total et le solde de ma carte cadeau
+          </h3>
+          <ol>
+            <li data-key="t3q3p1">
+              Rendez-vous dans le menu de l’application et cliquez sur l’onglet
+              “Mes cartes cadeaux”.
+            </li>
+            <li data-key="t3q3p2">
+              Identifiez la carte cadeau souhaitée parmi votre liste de cartes
+              cadeaux.
+            </li>
+            <li data-key="t3q3p3">
+              Dans le coin supérieur droit de votre carte cadeau, vous verrez le
+              montant initial de celle-ci, situé juste en dessous de son solde
+              restant.
+            </li>
+          </ol>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure17.png"
+              alt="Connaître le montant total et le solde de ma carte cadeau"
+            />
+            <figcaption data-key="p7">
+              Figure 12 : Connaître le montant total et le solde de ma carte
+              cadeau
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q4" class="section" id="t3q4">
+            4. Connaître le type de ma carte cadeau Prizy
+          </h3>
+          <p data-key="t3q4p1">
+            Prizy propose une vaste gamme de cartes-cadeaux qui se démarquent
+            les unes des autres en fonction du groupe de magasins où elles
+            peuvent être utilisées. Vous pouvez identifier le type de votre
+            carte cadeau en consultant le nom situé en haut à droite de la
+            carte. De plus, les différents types de cartes se distinguent par
+            leurs couleurs et leurs images de fond uniques.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure18.png"
+              alt="Connaître le type de ma carte cadeau Prizy"
+            />
+            <figcaption data-key="p7">
+              Figure 13 : Connaître le type de ma carte cadeau Prizy
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q5" class="section" id="t3q5">
+            5. Connaître la date de validité de ma carte cadeau Prizy
+          </h3>
+          <p data-key="t3q5p1">
+            Nos cartes-cadeaux présentent une caractéristique essentielle : leur
+            validité est déterminée sur une période définie, s'étendant entre
+            une date de début de validité (avant laquelle la carte ne peut pas
+            être utilisée) et une date d'expiration (après laquelle la carte
+            n'est plus utilisable).
+          </p>
+          <p data-key="t3q5p2">
+            Ces dates spécifiques sont clairement indiquées dans le coin
+            inférieur droit de votre carte cadeau.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure19.png"
+              alt="Connaître la date de validité de ma carte cadeau Prizy"
+            />
+            <figcaption data-key="p7">
+              Figure 14 : Connaître la date de validité de ma carte cadeau Prizy
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q6" class="section" id="t3q6">
+            6. Informations de paiement de ma carte cadeau Prizy
+          </h3>
+          <p data-key="t3q6p1">
+            Pour effectuer un paiement avec une carte cadeau Prizy, vous aurez
+            uniquement besoin de deux informations :
+          </p>
+          <ul class="points">
+            <li data-key="t3q6p2">
+              La clé de la carte cadeau : Celle-ci est disponible sous deux
+              formats différents, soit sous forme de QR code, soit sous forme
+              d'une chaîne de caractères. Vous devrez présenter cette clé au
+              caissier du magasin, qui la scannera ou la saisira en fonction du
+              format fourni.
+            </li>
+            <li data-key="t3q6p3">
+              Le code secret : Ce code à 4 chiffres vous sera demandé par le
+              vendeur pour finaliser votre transaction.
+            </li>
+          </ul>
+          <p data-key="t3q6p4">
+            Vous pourrez accéder à ces informations comme suit :
+          </p>
+          <ol>
+            <li data-key="t3q6p5">
+              Cliquez sur votre carte cadeau dans l’onglet “Mes cartes cadeaux”.
+            </li>
+            <li data-key="t3q6p6">
+              Vos informations de paiement seront affichées juste en dessous de
+              votre carte.
+            </li>
+            <li data-key="t3q6p7">
+              Pour visualiser votre code secret, veuillez cliquer sur l'icône de
+              visualisation située à gauche de votre code.
+            </li>
+            <li data-key="t3q6p8">
+              Pour utiliser votre carte cadeau, cliquez sur le bouton Utiliser
+              ma carte en bas de l'écran. Vous serez redirigé vers un écran
+              affichant l'identifiant de votre carte sous forme de code QR.
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure12.png"
+              alt="Informations de paiement de ma carte cadeau Prizy"
+            />
+            <figcaption data-key="p7">
+              Figure 15 : Informations de paiement de ma carte cadeau Prizy
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q7" class="section" id="t3q7">
+            7. Où consommer ma carte cadeau Prizy ?
+          </h3>
+
+          <p data-key="t3q7p1">
+            En fonction du type de carte cadeau que vous avez, vous pourrez
+            l'utiliser dans un certain nombre de magasins ou de sites web
+            partenaires affiliés à Prizy. Pour consulter la liste complète de
+            ces enseignes, il vous suffit de cliquer sur le bouton Où puis-je la
+            consommer situé en bas de l'écran.
+          </p>
+          <p data-key="t3q7p2">
+            En cliquant sur ce bouton, vous serez redirigé vers une nouvelle
+            page qui présente les partenaires affiliés. En choisissant l'une des
+            enseignes de la liste, vous accéderez à une autre page qui
+            répertorie les magasins de cette enseigne où vous pourrez utiliser
+            votre carte, ainsi que leurs horaires d'ouverture et leur
+            emplacement. Si le magasin propose également des ventes en ligne, un
+            lien vers leur site web vous permettra d'utiliser votre carte sur
+            leur plateforme.
+          </p>
+
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure10.png"
+              alt="Où consommer ma carte cadeau Prizy ?"
+            />
+            <figcaption data-key="p7">
+              Figure 16 : Où consommer ma carte cadeau Prizy ?
+            </figcaption>
+          </figure>
+
+          <!--Note-->
+
+          <div class="noteContainer">
+            <div class="noteTitleContainer">
+              <p data-key="p38" class="noteTitle">Remarque</p>
+              <div class="noteIconContainer">
+                <svg
+                  color="gray.100"
+                  fill="currentColor"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  width="22"
+                  xmlns="http://www.w3.org/2000/svg"
+                  sx="[object Object]"
+                  class="css-6b7alg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M11 18a7 7 0 100-14 7 7 0 000 14zm9-7a9 9 0 11-18 0 9 9 0 0118 0z"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 9v7h-2V9h2z"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path d="M12 8h-2V6h2v2z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="noteBodyContainer">
+              <p data-key="t3q7p3" class="noteBody">
+                Veuillez noter que certaines enseignes peuvent avoir plus de
+                magasins que ceux indiqués dans la liste. Dans ce cas, votre
+                carte ne pourra être utilisée que dans les magasins spécifiés.
+              </p>
+            </div>
+          </div>
+
+          <!--Fin de Note-->
+
+          <h3 data-key="t3q8" class="section" id="t3q8">
+            8. Comment accéder aux magasins les plus proches de moi ?
+          </h3>
+          <p data-key="t3q8p1">
+            En accédant à la liste complète des enseignes reliés à votre carte
+            cadeau (Q1), vous pouvez sélectionner deux types d’affichage : “Mode
+            enseignes” ou “Mode magasins”.
+          </p>
+          <p data-key="t3q8p2">
+            En activant votre géolocalisation et en accédant au “Mode magasins”,
+            vous verrez s’afficher la liste des magasins les plus proches de
+            vous en premier.
+          </p>
+
+          <h3 data-key="t3q9" class="section" id="t3q9">
+            9. Comment effectuer un paiement avec la carte cadeau Prizy ?
+          </h3>
+          <p data-key="t3q9p1">
+            Pour effectuer un paiement avec votre carte cadeau Prizy, veuillez
+            suivre les instructions décrites dans la question 06.
+          </p>
+
+          <h3 data-key="t3q10" class="section" id="t3q10">
+            10. Est-il possible d'utiliser les cartes-cadeaux Prizy en ligne ?
+          </h3>
+          <p data-key="t3q10p1">
+            Pour utiliser votre carte cadeau dans l'une de nos enseignes
+            partenaires, il vous suffit de sélectionner l'enseigne de votre
+            choix dans la liste. Si vous trouvez une section intitulée Site Web
+            avec un lien vers le site correspondant, alors vous pourrez
+            effectivement utiliser votre carte cadeau en ligne. Cependant, si
+            cette section n'est pas présente, l'utilisation en ligne ne sera
+            malheureusement pas possible.
+          </p>
+
+          <!--Note-->
+
+          <div class="noteContainer">
+            <div class="noteTitleContainer">
+              <p data-key="p38" class="noteTitle">Remarque</p>
+              <div class="noteIconContainer">
+                <svg
+                  color="gray.100"
+                  fill="currentColor"
+                  height="22"
+                  viewBox="0 0 22 22"
+                  width="22"
+                  xmlns="http://www.w3.org/2000/svg"
+                  sx="[object Object]"
+                  class="css-6b7alg"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M11 18a7 7 0 100-14 7 7 0 000 14zm9-7a9 9 0 11-18 0 9 9 0 0118 0z"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path
+                    clip-rule="evenodd"
+                    d="M12 9v7h-2V9h2z"
+                    fill-rule="evenodd"
+                  ></path>
+                  <path d="M12 8h-2V6h2v2z"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="noteBodyContainer">
+              <p data-key="t3q10p2" class="noteBody">
+                Veuillez noter que certaines de nos enseignes partenaires
+                peuvent proposer des ventes en ligne sur leur site web, même si
+                elles ne figurent pas dans la liste des magasins (comme c'est le
+                cas, par exemple, avec Zara). Dans de telles situations, votre
+                carte cadeau ne pourra malheureusement pas être utilisée en
+                ligne. Il est donc essentiel de vérifier régulièrement la liste
+                des magasins pour obtenir des informations à jour.
+              </p>
+            </div>
+          </div>
+
+          <!--Fin de Note-->
+
+          <h3 data-key="t3q11" class="section" id="t3q11">
+            11. Comment utiliser ma carte cadeau Prizy en ligne ?
+          </h3>
+          <p data-key="t3q11p1">
+            Pour utiliser votre carte cadeau pour un paiement en ligne, suivez
+            ces étapes simples :
+          </p>
+          <ol>
+            <li data-key="t3q11p2">
+              Assurez-vous tout d’abord que l’utilisation de la carte cadeau est
+              possible en ligne (voir question précédente).
+            </li>
+            <li data-key="t3q11p3">
+              Procéder à votre achat en ligne comme d’habitude.
+            </li>
+            <li data-key="t3q11p4">
+              Lorsque l’enseigne vous contacte pour confirmer votre commande,
+              indiquez clairement que vous souhaitez utiliser Prizy comme moyen
+              de paiement.
+            </li>
+            <li data-key="t3q11p5">
+              Suite à cela vous recevrez une demande de paiement par e-mail, où
+              vous devrez saisir les informations de paiement de votre carte
+              cadeau, notamment la clé et le code secret.
+            </li>
+            <li data-key="t3q11p6">
+              Une fois la demande de paiement validée, vous obtiendrez la
+              confirmation de votre commande.
+            </li>
+          </ol>
+
+          <h3 data-key="t3q12" class="section" id="t3q12">
+            12. Comment faire le suivi de mes “achats faits” avec ma carte
+            cadeau Prizy ?
+          </h3>
+          <p data-key="t3q12p1">
+            Chaque fois que vous effectuez un achat en utilisant votre carte
+            cadeau, le solde de celle-ci est automatiquement mis à jour (visible
+            en haut à droite de votre carte).
+          </p>
+          <p data-key="t3q12p2">
+            Pour consulter l'historique de toutes les transactions effectuées
+            avec cette carte, il vous suffit d'accéder aux détails de votre
+            carte cadeau.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure14.png"
+              alt="Comment faire le suivi de mes “achats faits” avec ma carte cadeau Prizy ?"
+            />
+            <figcaption data-key="p7">
+              Figure 17 : Comment faire le suivi de mes “achats faits” avec ma
+              carte cadeau Prizy ?
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q13" class="section" id="t3q13">
+            13. Comment faire un suivi global de mes achats ?
+          </h3>
+          <p data-key="t3q13p1">
+            Pour accéder à l’historique de toutes vos transactions , rendez-vous
+            au menu de l’application et cliquez sur “Mes transactions”. Vous
+            serez redirigé vers la liste de toutes les transactions faites avec
+            vos cartes cadeaux.
+          </p>
+          <figure>
+            <img
+              class="figure"
+              src="./assets/figure9.png"
+              alt="Comment faire un suivi global de mes achats ?"
+            />
+            <figcaption data-key="p7">
+              Figure 18 : Comment faire un suivi global de mes achats ?
+            </figcaption>
+          </figure>
+
+          <h3 data-key="t3q14" class="section" id="t3q14">
+            14. Est-il possible d’utiliser mes cartes cadeaux Prizy pendant les
+            offres/promotions ?
+          </h3>
+
+          <p data-key="t3q14p1">
+            Pendant les soldes, l'utilisation d'une carte cadeau Prizy suit les
+            règles de vente de chaque magasin. Il est recommandé de contacter
+            directement le magasin qui vous intéresse avant de vous déplacer,
+            pour vous assurer des détails. Leurs coordonnées se trouvent sur
+            leurs pages spéciales.
+          </p>
+          <p data-key="t3q14p2">
+            En cas de confusion ou de problème, n'hésitez pas à contacter notre
+            service clientèle. Notre équipe se fera un plaisir de vous aider.
+          </p>
+
+          <h3 data-key="t3q15" class="section" id="t3q15">
+            15. Que se passe-t-il si on me refuse ma carte cadeau Prizy ?
+          </h3>
+          <p data-key="t3q15p1">
+            Vous devez appeler tout de suite ce numéro (+213) 550 57 66 44 ou
+            envoyer un mail à cette adresse contact@prizy.co.
+          </p>
+
+          <h3 data-key="t3q16" class="section" id="t3q16">
+            16. Que dois-je faire si je m'aperçois que ma carte cadeau a été
+            utilisée frauduleusement ?
+          </h3>
+          <p data-key="t3q16p1">
+            Vous devez appeler ce numéro tout de suite (+213) 550 57 66 44.
+          </p>
+
+          <h3 data-key="t3q17" class="section" id="t3q17">
+            17. Est-ce que je peux utiliser ma carte cadeau après le délai de
+            validité ?
+          </h3>
+          <p data-key="t3q17p1">
+            Malheureusement, il n'est pas possible d'utiliser votre carte cadeau
+            au-delà de sa date de validité.
+          </p>
+
+          <h3 data-key="t3q18" class="section" id="t3q18">
+            18. Que dois-je faire en cas de retour ou d'échange produit dans une
+            des enseignes partenaires ?
+          </h3>
+          <p data-key="t3q18p1">
+            Les retours et les échanges sont régis selon les conditions de
+            ventes de chacune des enseignes. Cependant, en cas de retour
+            accepté, le vendeur en charge de la transaction doit transmettre le
+            justificatif de votre retour afin que l'on procède au remboursement
+            du montant de la transaction.
+          </p>
+
+          <h3 data-key="t3q19" class="section" id="t3q19">
+            19. Puis-je annuler une commande après avoir fait mon paiement en
+            ligne ?
+          </h3>
+          <p data-key="t3q19p1">
+            Les annulations de commandes en ligne sont régis selon les
+            conditions de ventes de chacune des enseignes ayant un site web.
+            Cependant, en cas d’annulation acceptée, le vendeur en charge de la
+            transaction doit transmettre le justificatif de votre annulation
+            afin que l'on procède au remboursement du montant de la transaction.
+          </p>
+
+          <h3 data-key="t3q20" class="section" id="t3q20">
+            20. J’ai fait un achat en ligne mais je ne reçois pas d’appel pour
+            confirmer ma commande
+          </h3>
+          <p data-key="t3q20p1">
+            Pour résoudre votre problème, veuillez contacter directement
+            l'enseigne en question en utilisant le numéro de téléphone
+            disponible sur leur page dans l'application. Si vous ne parvenez pas
+            à les joindre, vous pouvez nous contacter au (+213) 550 57 66 44 ou
+            nous envoyer un e-mail à l'adresse contact@prizy.co. Notre équipe
+            sera heureuse de vous assister.
+          </p>
+
+          <h3 data-key="t3q21" class="section" id="t3q21">
+            21. J'ai renvoyé mes articles à l'enseigne mais je ne trouve pas mon
+            remboursement
+          </h3>
+          <p data-key="t3q21p1">
+            En cas d'acceptation du remboursement, le vendeur responsable de la
+            transaction doit fournir la preuve du retour, ce qui permettra de
+            procéder au remboursement du montant de la transaction. Si ce
+            processus prend du temps, veuillez nous contacter au (+213) 550 57
+            66 44 ou nous envoyer un e-mail à l'adresse contact@prizy.co. Notre
+            équipe sera heureuse de vous aider.
+          </p>
+
+          <h3 data-key="t3q22" class="section" id="t3q22">
+            22. Votre question ne figure pas dans la liste et vous voulez
+            reporter un problème ?
+          </h3>
+          <p data-key="t3q22p1">
+            Contactez notre service d'assistance pour toute autre question :
+            (+213) 550 57 66 44.
+          </p>
+        </div>
+      </div>
+
+      <!--End of Help-->
+
+      <!--Footer-->
+      <footer dir="ltr">
+        <div class="footerBox">
+          <div class="footerColumn">
+            <img class="footerLogo" src="./assets/logoblanc.png" alt="Logo" />
+            <p class="footerP">Incentive, Rewards, Loyalty...</p>
+            <p data-key="p45" class="footerP" style="margin-bottom: 10px">
+              Reinventer Recompense en entreprise
+            </p>
+            <p class="footerP" style="font-size: 14px; font-weight: 300">
+              <a
+                target="_blank"
+                href="mailto:contact@prizy.co"
+                style="
+                  text-decoration: none;
+                  color: #fff;
+                  font-size: 14px;
+                  font-weight: 300;
+                "
+                >contact@prizy.co</a
+              >
+            </p>
+            <p class="footerP" style="font-size: 14px; font-weight: 300">
+              <a
+                dir="ltr"
+                target="_blank"
+                href="tel:0550576644"
+                style="
+                  text-decoration: none;
+                  color: #fff;
+                  font-size: 14px;
+                  font-weight: 300;
+                "
+                >(+213) 550 57 66 44</a
+              >
+            </p>
+          </div>
+
+          <div class="social-links">
+            <a href="https://prizy.co/" target="_blank"
+              ><i class="fa fa-globe"></i
+            ></a>
+            <a href="https://www.instagram.com/prizy.co/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/fixitplus/ "
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </footer>
+      <div class="copyrightscontainer">
+        <p data-key="p46" class="copyrights">
+          © Prizy, 2023. Tous droits réservés.
+        </p>
+      </div>
+
+      <!--End of the footer-->
+    </div>
+  </body>
+</html>
