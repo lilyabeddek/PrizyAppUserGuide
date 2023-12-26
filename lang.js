@@ -5,6 +5,26 @@ const langdata = {
     "prizy-gift-cards":"Prizt App",
     "guidelines":"Prizy App : Mode d’emploi",
     "p1":"Découvrez comment recevoir et utiliser nos cartes cadeaux Prizy pour effectuer des achats dans notre réseau de boutiques partenaires, non seulement par e-mail, mais également au moyen de notre application Prizy.",
+    "p2":"Dernière mise à jour le 23 Décembre 2023",
+
+    "p3":"Figure 1 : Première connexion : comment créer un compte sur Prizy?",
+    "p4":"Figure 2 : Comment me connecter à mon compte Prizy ?",
+    "p5":"Figure 3 : Comment modifier les informations personnelles de mon compte utilisateur ?",
+    "p6":"Figure 4 : Comment me déconnecter de l'application ?",
+    "p7":"Figure 5 : Comment configurer une nouvelle adresse email sur mon compte Prizy ?",
+    "p8":"Figure 6 : Renvoyer un email de vérification",
+    "p9":"Figure 7 : Supprimer une adresse email",
+    "p10":"Figure 8 : Activer le mode nuit",
+    "p11":"Figure 9 : Changer la langue de l’application",
+    "p12":"Figure 10 : À propos de nos cartes cadeaux Prizy",
+    "p13":"Figure 11 : Canaux de réception d’une carte cadeau Prizy",
+    "p14":" Figure 12 : Connaître le montant total et le solde de ma carte cadeau",
+    "p15":"Figure 13 : Connaître le type de ma carte cadeau Prizy",
+    "p16":"Figure 14 : Connaître la date de validité de ma carte cadeau Prizy",
+    "p17":"Figure 15 : Informations de paiement de ma carte cadeau Prizy",
+    "p18":"Figure 16 : Où consommer ma carte cadeau Prizy ?",
+    "p19":"Figure 17 : Comment faire le suivi de mes “achats faits” avec ma carte cadeau Prizy ?",
+    "p20":"Figure 18 : Comment faire un suivi global de mes achats ?",
    
     "t1":"Authentification et informations personelles",
     "t1q1": "1. Première connexion : comment créer un compte sur Prizy ?",
@@ -156,7 +176,7 @@ const langdata = {
     "t3q9p1":"Pour effectuer un paiement avec votre carte cadeau Prizy, veuillez suivre les instructions décrites dans la question précédente.",
 
     "t3q10p1":"Pour utiliser votre carte cadeau dans l'une de nos enseignes partenaires, il vous suffit de sélectionner l'enseigne de votre choix dans la liste. Si vous trouvez une section intitulée Site Web avec un lien vers le site correspondant, alors vous pourrez effectivement utiliser votre carte cadeau en ligne. Cependant, si cette section n'est pas présente, l'utilisation en ligne ne sera malheureusement pas possible.",
-    "t3q10p1":"Veuillez noter que certaines de nos enseignes partenaires peuvent proposer des ventes en ligne sur leur site web, même si elles ne figurent pas dans la liste des magasins (comme c'est le cas, par exemple, avec Zara). Dans de telles situations, votre carte cadeau ne pourra malheureusement pas être utilisée en ligne. Il est donc essentiel de vérifier régulièrement la liste des magasins pour obtenir des informations à jour.",
+    "t3q10p2":"Veuillez noter que certaines de nos enseignes partenaires peuvent proposer des ventes en ligne sur leur site web, même si elles ne figurent pas dans la liste des magasins (comme c'est le cas, par exemple, avec Zara). Dans de telles situations, votre carte cadeau ne pourra malheureusement pas être utilisée en ligne. Il est donc essentiel de vérifier régulièrement la liste des magasins pour obtenir des informations à jour.",
 
     "t3q11p1":"Pour utiliser votre carte cadeau pour un paiement en ligne, suivez ces étapes simples :",
     "t3q11p2":"Assurez-vous tout d’abord que l’utilisation de la carte cadeau est possible en ligne (voir question précédente).",
@@ -208,6 +228,26 @@ const langdata = {
     "prizy-gift-cards":"Prizy App",
     "guidelines":"Prizy App : Guidelines",
     "p1": "Preview how to receive and use our Prizy gift cards to make purchases within our network of partner stores, now not only via email but also through our Prizy application.",
+    "p2":"Last updated on 23 December 2023",
+
+    "p3":"Figure 1: First connection: how do I create an account on Prizy?",
+    "p4":"Figure 2: How do I log into my Prizy account?",
+    "p5":"Figure 3: How do I change the personal details in my user account?",
+    "p6":"Figure 4: How do I log out of the application?",
+    "p7":"Figure 5: How do I configure a new email address on my Prizy account?",
+    "p8":"Figure 6: Resending a verification email",
+    "p9":"Figure 7: Deleting an email address",
+    "p10":"Figure 8: Activating night mode",
+    "p11":"Figure 9: Changing the application language",
+    "p12":"Figure 10: About our Prizy gift cards",
+    "p13":"Figure 11: Prizy gift card reception channels",
+    "p14":"Figure 12: Checking the total amount and balance of my gift card",
+    "p15":"Figure 13: Find out the type of my Prizy gift card",
+    "p16":"Figure 14: Checking the validity date of my Prizy gift card",
+    "p17":"Figure 15: My Prizy gift card payment details",
+    "p18":"Figure 16: Where can I redeem my Prizy gift card?",
+    "p19":"Figure 17: How do I keep track of my “purchases made“ with my Prizy gift card?",
+    "p20":"Figure 18: How do I keep track of all my purchases?",
 
     "t1":"Authentication and personal information",
     "t1q1": "1. First time users: how to create an account on Prizy ?",
@@ -355,7 +395,7 @@ const langdata = {
     "t3q9p1":"To make a payment with your Prizy gift card, please follow the instructions described in the question 06",
 
     "t3q10p1":"To use your gift card online in one of our partner stores, simply select the store of your choice from the list. If you find a section entitled Website with a link to the corresponding site, then you will indeed be able to use your gift card online. However, if this section is not present, online use will unfortunately not be possible.",
-    "t3q10p1":"Please note that some of our partner stores may offer online sales on their website, even if they are not listed as a store (as is the case, for example, with Zara). Unfortunately, in such cases, your gift card cannot be used online. It is therefore essential to check the store list regularly for up-to-date information.",
+    "t3q10p2":"Please note that some of our partner stores may offer online sales on their website, even if they are not listed as a store (as is the case, for example, with Zara). Unfortunately, in such cases, your gift card cannot be used online. It is therefore essential to check the store list regularly for up-to-date information.",
 
 
     "t3q11p1":"To use your gift card for online payment, follow these simple steps :",
@@ -403,10 +443,30 @@ const langdata = {
   ar: {
     "help-center": "مركز المساعدة",
     "in-this-guide": "في هذا الدليل",
-    "prizy-gift-cards":"تطبيق برايزي",
-    "guidelines":"تطبيق برايزي: تعليمات الاستخدام",
+    "prizy-gift-cards":"تطبيق  Prizy",
+    "guidelines":"تطبيق  Prizy: تعليمات الاستخدام",
     "p1":"قم بمعاينة كيفية تلقي بطاقات هدايا Prizy واستخدامها لإجراء عمليات شراء داخل شبكة المتاجر الشريكة لدينا، ليس فقط عبر البريد الإلكتروني ولكن أيضًا من خلال تطبيق Prizy الخاص بنا.",
-   
+    "p2":"آخر تحديث في 23 ديسمبر 2023",
+
+    "p3":"الشكل 1: كيف أقوم بإنشاء حساب على Prizy؟",
+    "p4":"الشكل 2: كيف يمكنني تسجيل الدخول إلى حساب Prizy الخاص بي؟",
+    "p5":"الشكل 3: كيف يمكنني تغيير التفاصيل الشخصية في حساب المستخدم الخاص بي؟",
+    "p6":"الشكل 4: كيف يمكنني تسجيل الخروج من التطبيق؟",
+    "p7":"الشكل 5: كيف أقوم بتكوين عنوان بريد إلكتروني جديد على حساب Prizy الخاص بي؟",
+    "p8":"الشكل 6: إعادة إرسال رسالة التحقق بالبريد الإلكتروني",
+    "p9":"الشكل 7: حذف عنوان بريد إلكتروني",
+    "p10":"الشكل 8: تفعيل الوضع الليلي",
+    "p11":"الشكل 9: تغيير لغة التطبيق",
+    "p12":"الشكل 10: نبذة عن بطاقات هدايا Prizy الخاصة بنا",
+    "p13":"الشكل 11: قنوات استقبال بطاقات الهدايا",
+    "p14":"الشكل 12: التحقق من المبلغ الإجمالي ورصيد بطاقة الهدايا الخاصة بي",
+    "p15":"الشكل 13: اكتشف نوع بطاقة هدايا Prizy الخاصة بي",
+    "p16":"الشكل 14: التحقق من تاريخ صلاحية بطاقة هدايا Prizy الخاصة بي",
+    "p17":"الشكل 15: تفاصيل الدفع ببطاقة هدايا Prizy",
+    "p18":"الشكل 16: أين يمكنني إنفاق بطاقة هدايا Prizy الخاصة بي؟",
+    "p19":"الشكل 17: كيف يمكنني متابعة “المشتريات التي قمت بها“ باستخدام بطاقة هدايا Prizy الخاصة بي؟",
+    "p20":"الشكل 18: كيف يمكنني متابعة جميع مشترياتي؟",
+
     "t1":"المصادقة والمعلومات الشخصية",
     "t1q1": "كيفية إنشاء حساب على تطبيق Prizy",
     "t1q2": "لا أتلقى الرمز على رقم هاتفي ؟", 
@@ -552,7 +612,7 @@ const langdata = {
     "t3q9p1":"لإجراء الدفع باستخدام بطاقة هدايا Prizy الخاصة بك، يرجى اتباع التعليمات الموضحة في القسم السابق.",
 
     "t3q10p1":"لاستخدام بطاقة الهدايا الخاصة بك في إحدى العلامات التجارية الشريكة لنا عبر الإنترنت، ما عليك سوى تحديد العلامة التجارية التي تختارها من القائمة. إذا وجدت قسمًا يسمى موقع الويب يحتوي على رابط إلى الموقع المقابل، فستتمكن فعليًا من استخدام بطاقة الهدايا الخاصة بك عبر الإنترنت. ولكن، إذا لم يكن هذا القسم موجودًا، فلن يكون الاستخدام عبر الإنترنت ممكنًا للأسف.",
-    "t3q10p1":"يرجى ملاحظة أن بعض العلامات التجارية الشريكة لنا قد تقدم مبيعات عبر الإنترنت على موقعها الإلكتروني، حتى لو لم تكن مدرجة في قائمة المتاجر (كما هو الحال، على سبيل المثال، مع Zara). في مثل هذه الحالات، للأسف لا يمكن استخدام بطاقة الهدايا الخاصة بك عبر الإنترنت. لذلك من الضروري التحقق من قائمة المتاجر بانتظام للحصول على معلومات محدثة.",
+    "t3q10p2":"يرجى ملاحظة أن بعض العلامات التجارية الشريكة لنا قد تقدم مبيعات عبر الإنترنت على موقعها الإلكتروني، حتى لو لم تكن مدرجة في قائمة المتاجر (كما هو الحال، على سبيل المثال، مع Zara). في مثل هذه الحالات، للأسف لا يمكن استخدام بطاقة الهدايا الخاصة بك عبر الإنترنت. لذلك من الضروري التحقق من قائمة المتاجر بانتظام للحصول على معلومات محدثة.",
 
     "t3q11p1":"لاستخدام بطاقة الهدايا الخاصة بك للدفع عبر الإنترنت، اتبع الخطوات البسيطة التالية:",
     "t3q11p2":"أولاً، تأكد من إمكانية استخدام بطاقة الهدايا عبر الإنترنت (راجع السؤال السابق).",
@@ -594,7 +654,7 @@ const langdata = {
     "p46":"© Prizy، 2023. جميع الحقوق محفوظة.",
 
     "p38":"ملاحظة",
-    "title":"تطبيق برايزي - مركز المساعدة",
+    "title":"تطبيق  Prizy - مركز المساعدة",
 
   },
 };
