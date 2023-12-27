@@ -2,7 +2,7 @@ const langdata = {
   fr: {
     "help-center": "Centre d'aide",
     "in-this-guide": "DANS CE GUIDE",
-    "prizy-gift-cards":"Prizt App",
+    "prizy-gift-cards":"Prizy App",
     "guidelines":"Prizy App : Mode d’emploi",
     "p1":"Découvrez comment recevoir et utiliser nos cartes cadeaux Prizy pour effectuer des achats dans notre réseau de boutiques partenaires, non seulement par e-mail, mais également au moyen de notre application Prizy.",
     "p2":"Dernière mise à jour le 23 Décembre 2023",

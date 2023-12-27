@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="./logo192.png" />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./indexstyle.css" />
-    <title data-key="title">Cartes cadeaux Prizy - Centre d'aide</title>
+    <title data-key="title">Prizy App - Centre d'aide</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -51,12 +51,13 @@
     <!--Main script-->
     <script>
       var saved_lang = localStorage && localStorage.getItem("saved_lang");
+      if (!saved_lang) {
+        saved_lang = "fr";
+      }
 
       $(document).ready(function () {
-        if (saved_lang) {
-          $("select").val(saved_lang);
-          updateUserLang(saved_lang);
-        }
+        $("select").val(saved_lang);
+        updateUserLang(saved_lang);
 
         //click on a title from the sub menu
         $(".submenu").on("click", "a", function () {
@@ -208,7 +209,7 @@
             </li>
             <li class="submenuElement">
               <a data-key="t2" id="tot2" href="#t2"
-                >Informations générales sur les cartes cadeaux Prizy</a
+                >Gestion d'un profil Prizy</a
               >
               <ul class="submenuElementList">
                 <li>
@@ -434,10 +435,10 @@
                 padding: 0;
               "
             >
-              Cartes cadeaux Prizy
+              Prizy App
             </p>
           </div>
-          <h1 data-key="guidelines">Cartes cadeaux Prizy : Mode d’emploi</h1>
+          <h1 data-key="guidelines">Prizy App : Mode d’emploi</h1>
           <p
             data-key="p1"
             style="
